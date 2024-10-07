@@ -1,0 +1,442 @@
+.drawer-opened {
+  --flow-app-drawer-width: 150px;
+}
+
+body.loading:after {
+  content: "";
+  position: fixed;
+  z-index: 10000;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgb(255, 255, 255) no-repeat center;
+  background-image: url("/images/spinner.svg");
+  background-size: 100px auto;
+  min-height: 100vh;
+}
+
+#tabs {
+  --flow-tab-font-weight: normal;
+  --flow-tab-font-size: 1.2rem;
+}
+
+.logo {
+  display: inline-block;
+  align-self: flex-start;
+  object-fit: contain;
+  object-position: left center;
+  max-width: 50%;
+  margin: 32px;
+}
+
+.menu {
+  padding: 20px 0px;
+  list-style: none;
+}
+
+.menu li {
+  padding: 8px 15px;
+  font-size: 1rem;
+  user-select: none;
+}
+
+.menu li:not(.disabled):not(.active):hover {
+  color: var(--flow-primary-color);
+  background-color: rgba(204, 204, 204, 0.2);
+  cursor: pointer;
+}
+
+.menu li.active {
+  color: var(--flow-primary-color);
+  background-color: #3c3c3c;
+  position: relative;
+}
+
+.menu li.active svg {
+  fill: var(--flow-primary-color);
+}
+
+.menu li {
+  --fa-icon-color: var(--flow-color);
+}
+
+.menu li.text {
+  margin-left: 10px;
+}
+
+.menu li.sep {
+  padding: 0px;
+  margin: 2px 0px;
+  border-bottom: 1px solid var(--flow-primary-color);
+}
+
+.header {
+  min-height: 85px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.left-area .menu li {
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+body.flow-user-signedin .left-area .menu li.non-user-menu,
+body:not(.flow-user-signedin) .left-area .menu li.user-menu {
+  display: none;
+}
+
+body:not(.drawer-opened) flow-app-drawer li .text {
+  display: none;
+}
+
+body:not(.flow-theme-light) {
+  --logo-light-display: none;
+}
+
+.main-area {
+  display: flex;
+  flex-direction: row;
+
+  /* justify-content: center; */
+  background-color: rgba(200, 200, 200, 0.15);
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  /* overflow-y: hidden; */
+  overflow-x: hidden;
+}
+
+.flow-theme-light .menu li.active {
+  --fa-icon-color: #ffffff;
+  color: #ffffff;
+}
+
+.logo.light {
+  display: var(--logo-light-display, initial);
+}
+
+.control {
+  display: none;
+}
+
+[for][slot="header"]:not(.active) {
+  display: none;
+}
+
+.h-box {
+  display: flex;
+}
+
+.h-box.align-start {
+  align-items: start;
+}
+
+.form {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form.center {
+  margin: auto;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.p-30 {
+  display: flex;
+  max-width: 1000px;
+  font-size: 18px;
+  padding: 30px;
+}
+
+flow-select {
+  margin: 8px;
+}
+
+flow-select.no-h-margin {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+body.flow-theme-light,
+body.flow-theme-dark {
+  --color-l-offset: 0%;
+  --color-l-offset-more: 48%;
+  --color-box-active-border-color: #b1b1b1;
+  --flow-box-shadow: 0 2px 2px 0 rgba(10, 10, 10, 0.14),
+    0 3px 1px -2px rgba(10, 10, 10, 0.2), 0 1px 5px 0 rgba(10, 10, 10, 0.12);
+  --flow-background-inverse: #ffffff;
+  --flow-background-inverse-soft: #cccccc;
+  --flow-background-color: #131723; /*#232323;*/
+  color: #b1b1b1;
+  --flow-color: #b1b1b1;
+  --flow-primary-color: #787b86;
+  --flow-tab-bg-top: #363537;
+  --flow-tab-bg-bottom: #363537;
+  --flow-tab-active-bg-top: #232323; /* can not have this different color as tab can be as high as multiple rows... */
+  --flow-tab-active-bg-bottom: #232323;
+  --flow-checkbox-checked-bg: #2f2f2f;
+  --flow-list-item-border: 1px solid #585858;
+  --flow-list-item-active-border: 1px solid var(--flow-primary-color);
+  --flow-list-item-hover-bg: #585858;
+  --flow-list-item-active-bg: var(--flow-primary-color);
+  --flow-list-item-active-color: #ffffff;
+  --flow-data-field-value: #ffffff;
+  --flow-data-field-caption: #cccccc;
+  --flow-data-field-caption-shadow: rgba(209, 142, 121);
+
+  /* aspect
+	 * --flow-input-bg: #2f2f2f;
+	 * --flow-input-color: var(--flow-color, #b1b1b1);
+	 */
+  --flow-input-label-padding: 5px 7px;
+  --flow-input-label-font-size: 0.8rem;
+  --flow-input-label-border: 0px;
+  --flow-input-font-family: "Consolas";
+  --flow-input-font-size: 14px;
+  --flow-input-font-weight: normal;
+  --flow-input-height: 50px;
+  --flow-input-line-height: 1;
+  --flow-input-margin: 20px 0px;
+  --flow-input-padding: 10px 10px 10px 16px;
+  --flow-input-bg: white;
+  --flow-input-color: #585858;
+  --flow-input-placeholder: #aaaaaa;
+  --flow-input-border: 0px;
+  --flow-input-box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.05),
+    -10px -10px 30px rgba(0, 0, 0, 0.05);
+  --flow-select-label-font-size: 0.8rem;
+  --flow-select-input-height: 50px;
+  --flow-select-selected-min-height: 50px;
+  --flow-select-selected-height: 50px;
+  --flow-select-input-padding: 18px 30px 10px 14px;
+  --flow-select-margin: 20px 0px;
+  --flow-select-margin: 5px 5px;
+  --flow-select-border: var(--flow-input-border);
+  --flow-select-label-border: 0px;
+  --flow-select-selected-min-width: 200px;
+  --flow-btn-primary-bg-color: #4c5157;
+  --flow-btn-primary-border-color: #4c5157;
+  --flow-btn-hover-border-color: #808080;
+  --flow-btn-hover-primary-bg-color: #808080;
+  --flow-btn-hover-primary-color: #000000;
+  --flow-btn-border-color: none;
+  --flow-btn-border-width: 1.5px;
+  --flow-btn-padding: 10px 16px;
+  --flow-btn-margin: 2px;
+  --flow-btn-font-weight: normal;
+  --flow-btn-font-size: 0.8rem;
+  --flow-btn-wrapper-min-width: 25px;
+  --flow-data-badge-container-border: 1px;
+  --flow-data-badge-value-font-size: 10px;
+  --flow-data-badge-value-font-family: "Julius Sans One";
+  --flow-data-badge-value-font-weight: 100;
+  --flow-data-badge-title-font-size: 9px;
+  --flow-checkbox-outer-width: 18px;
+  --flow-checkbox-outer-height: 18px;
+  --flow-checkbox-outer-border: 1px solid rgba(0, 0, 0, 0.54);
+  --flow-checkbox-outline-width: 110%;
+  --flow-checkbox-outline-height: 110%;
+  --flow-form-control-input-box-width: 300px;
+  --flow-form-control-icon-box-width: 18px;
+  --flow-form-control-icon-box-height: 18px;
+  --flow-pagination-margin: 4px 4px;
+  --flow-border-hover-color: rgb(231, 106, 106);
+  --flow-link-hover-color: #015b77;
+  --flow-sunburst-graph-tip-color: white;
+  --flow-gridstack-placeholder-bg: #aaaaaa;
+  background-color: #ffffff;
+  --flow-color: #585858;
+  color: var(--flow-color);
+  --flow-primary-color: #828080; /* var(--flow-color); */
+  --flow-border-color: rgb(29, 46, 46);
+  --flow-app-header-height: 100px;
+  --flow-app-header-bg: rgba(200, 200, 200, 0.15);
+  --flow-app-drawer-bg: white;
+  --flow-list-item-active-bg: white;
+  --flow-list-item-hover-bg: #585858;
+  --flow-list-item-active-color: #585858;
+  --flow-background-inverse: #ffffff;
+  --flow-background-inverse-soft: #838383;
+  --flow-background-color: var(--flow-color);
+  --panel-bg: #ffffff;
+  --flow-btn-hover-bg-color: var(--finfr-order-entry-primary-color);
+  --flow-btn-hover-color: #ffffff;
+  --flow-terminal-bg-color: var(--panel-bg);
+  --flow-terminal-color: var(--flow-color);
+  --flow-font-family: "Trebuchet MS";
+  --flow-data-badge-font-family: "Exo 2";
+  --flow-data-badge-value-font-family: "Exo 2";
+  --flow-data-badge-font-weight: normal;
+  --flow-menu-item-selected-bg: #ffffff;
+  --flow-link-color: #3289f9;
+  --flow-link-hover-color: rgb(0, 223, 255);
+  --flow-link-font-family: "Open Sans";
+  --flow-link-font-weight: normal;
+  --flow-dropdown-bg: white;
+  --flow-appdrawer-btn-bg: white;
+  --flow-menu-item-bg: #f5f4f4;
+  --flow-dialog-background-color: white;
+  --flow-dialog-btn-padding: 10px 16px;
+  --flow-menu-item-selected-color: var(--flow-color);
+  --flow-checkbox-checked-color: white;
+}
+
+[row] {
+  display: flex;
+  flex-direction: row;
+}
+
+[col] {
+  display: flex;
+  flex-direction: column;
+}
+
+.balance-wrapper {
+  padding-top: 64px;
+  width: 40%;
+  margin-left: 32px;
+}
+
+.form-wrapper {
+  padding-top: 64px;
+  width: 40%;
+  margin-right: 32px;
+  max-width: 600px;
+  align-items: flex-start;
+}
+
+.logo-col {
+  display: block;
+  max-width: 4px;
+  opacity: 0.1;
+}
+
+.logo-col img {
+  padding: 32px;
+}
+
+.content {
+  width: 100%;
+}
+.balance-wrapper {
+  position: relative;
+}
+
+.balance-wrapper::after {
+  content: "";
+  position: absolute;
+  margin-top: 64px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+
+  /* z-index: -1; */
+  background: url(/images/logo/logo-bright.png);
+  background-repeat: no-repeat;
+
+  /* border: 1px solid red; */
+  background-position: top center;
+  background-size: contain;
+}
+
+flow-dialog.custom {
+  font-family: "Open Sans";
+  font-size: 16px;
+}
+
+flow-dialog.custom .address,
+flow-dialog.custom .amount {
+  font-family: "Consolas";
+  font-size: 16px;
+  /* font-weight: bold; */
+}
+
+flow-dialog {
+  --flow-btn-hover-border-color: #808080;
+  --flow-btn-hover-primary-bg-color: #808080;
+  --flow-btn-hover-primary-color: #000000;
+}
+
+flow-dialog.custom .api-error {
+  font-family: "Consolas";
+  font-size: 16px;
+  max-width: 540px;
+  overflow-wrap: break-word;
+}
+
+flow-dialog.custom .txid {
+  font-family: "Consolas";
+  font-size: 12px;
+}
+
+flow-dialog.custom .error {
+  color: #aa0000;
+  font-weight: bold;
+}
+
+/*
+.balance-wrapper {
+	background-image: url(/images/logo/logo-bright.png);
+	background-size: 80% auto;
+	background-position: center;
+	background-color: rgba(255,255,255,0.5);
+}
+*/
+
+.balance-wrapper,
+.form-wrapper {
+  min-width: 500px;
+  /* border: 1px solid red; */
+}
+
+[flex] {
+  flex: 1;
+}
+
+spectre-faucet-app .divider {
+  flex: 1;
+}
+
+@media (max-width: 1048px) {
+  .balance-wrapper,
+  .form-wrapper {
+    max-width: 600px;
+    margin: 0px auto;
+    min-width: 0px;
+    width: 95%;
+  }
+
+  .divider {
+    min-width: 100%;
+    height: 100px;
+  }
+
+  .divider:first-child {
+    display: none;
+  }
+
+  spectre-faucet-app .main-area > .content {
+    display: block;
+  }
+
+  .balance-wrapper::after {
+    height: 140%;
+  }
+}
+
+body {
+  --value-column-width: 170px;
+  --blue-score-column-width: 166px;
+  --txid-column-width: 300px;
+}

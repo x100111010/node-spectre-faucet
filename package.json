@@ -1,0 +1,47 @@
+{
+  "name": "@spectre/faucet",
+  "version": "0.3.14",
+  "description": "spectre-faucet",
+  "scripts": {
+    "start": "node spectre-faucet"
+  },
+  "main": "spectre-faucet.js",
+  "authors": [
+    {
+      "name": "ASPECTRON Inc",
+      "email": "info@aspectron.com"
+    },
+    {
+      "name": "Spectre Developers",
+      "discord": "https://discord.spectre-network.org/"
+    }
+  ],
+  "dependencies": {
+    "@aspectron/flow-http": ">=0.2.4",
+    "@aspectron/flow-router": "aspectron/flow-router",
+    "@aspectron/flow-utils": ">=0.1.1",
+    "@aspectron/flow-ux": "1.1.1",
+    "@spectre/grpc": "github:spectre-project/spectre-grpc",
+    "@spectre/grpc-node": "github:spectre-project/spectre-grpc-node",
+    "@spectre/wallet": "github:spectre-project/spectre-wallet",
+    "@spectre/wallet-worker": "github:spectre-project/spectre-wallet-worker",
+    "@webcomponents/webcomponentsjs": "*",
+    "colors": "*",
+    "commander": "^6.2.1",
+    "cookie": "*",
+    "cookie-signature": "*",
+    "decimal.js": "^10.2.1",
+    "express": "4.17.1",
+    "express-session": "1.17.1",
+    "node-fetch": "^2.6.6",
+    "sockjs": "*",
+    "sockjs-client": "*",
+    "ws": "^7.4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spectre-project/node-spectre-faucet"
+  },
+  "license": "ICS",
+  "private": true
+}

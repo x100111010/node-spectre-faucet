@@ -1,0 +1,6 @@
+node_modules
+package-lock.json
+*.local.conf
+bin/*
+.seeds
+test.js
